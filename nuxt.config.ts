@@ -58,15 +58,23 @@ export default defineNuxtConfig({
     prefix: '',
     componentDir: './app/components/ui',
   },
-  // ipxStatic optimises and emits every image at build time, so the deploy stays
-  // pure static files. It also prefixes generated URLs with app.baseURL.
   // WebP is set per-image rather than globally: several assets under
-  // public/images are SVGs that carry a .png extension (hero-phone-body.png,
-  // logo-rumo.png), and forcing a raster format would rasterise the vector art.
+  // public/images are SVGs that carry a .png extension, and forcing a raster
+  // format would rasterise the vector art.
+  //
+  // The provider is deliberately left at the default `ipx` here: it serves
+  // /_ipx/* through dev middleware. `ipxStatic` has no such middleware, so
+  // pinning it globally 404s every image under `nuxt dev`.
   image: {
-    provider: 'ipxStatic',
     quality: 75,
     densities: [1, 2],
+  },
+  // ipxStatic emits every image at build time, so the deploy stays pure static
+  // files. It also prefixes generated URLs with app.baseURL.
+  $production: {
+    image: {
+      provider: 'ipxStatic',
+    },
   },
   // The site has three fixed routes. Declaring them beats route auto-discovery,
   // which picked up the base path as a route and emitted duplicate entries.
