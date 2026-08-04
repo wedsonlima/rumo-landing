@@ -33,11 +33,11 @@
 
         <div class="s-hero__platforms">
           <span class="s-hero__platforms-label">Plataformas disponíveis:</span>
-          <div class="s-hero__platforms-icons">
-            <IconApple class="s-hero__platform-icon" aria-label="iOS" />
-            <IconWeb class="s-hero__platform-icon s-hero__platform-icon--square" aria-label="Web" />
-            <IconAndroid class="s-hero__platform-icon" aria-label="Android" />
-          </div>
+          <p class="s-hero__platforms-list">
+            iOS <span class="s-hero__platforms-sep">/</span>
+            Android <span class="s-hero__platforms-sep">/</span>
+            Web
+          </p>
         </div>
       </div>
 
@@ -144,26 +144,19 @@
 
 /* ── Plataformas ────────────────────────────────────── */
 .s-hero__platforms {
-  @apply flex items-center gap-2.5 border-l border-text-muted pl-2.5;
+  @apply flex flex-wrap items-center gap-x-2.5 gap-y-1 border-l border-text-muted pl-2.5;
 }
 
 .s-hero__platforms-label {
   @apply font-sans font-normal text-xs text-text-muted tracking-[0.12px] whitespace-nowrap;
 }
 
-.s-hero__platforms-icons {
-  @apply flex items-center gap-2.5;
+.s-hero__platforms-list {
+  @apply font-mono font-normal text-xs text-text-body tracking-[0.12px] whitespace-nowrap;
 }
 
-.s-hero__platform-icon {
-  @apply size-6 text-text-muted;
-}
-
-/* Apple e Android têm viewBox 17×21, então desenham 19,4×24 dentro da caixa de
-   24px. O ícone Web é quadrado (20×20) e preencheria os 24px inteiros, ficando
-   opticamente maior que os vizinhos. Um passo menor iguala a massa visual. */
-.s-hero__platform-icon--square {
-  @apply size-5;
+.s-hero__platforms-sep {
+  @apply text-text-subtle;
 }
 
 /* ── Phone mockup ───────────────────────────────────── */

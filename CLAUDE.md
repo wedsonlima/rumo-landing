@@ -248,3 +248,4 @@ Uso:
 | 2026-08-04 | `useSeoPage()` é a única fonte de canonical/OG — `useRequestURL()` proibido |
 | 2026-08-04 | `gsap`, `plyr` e o iframe do Vimeo saem do bundle inicial via `import()` dinâmico |
 | 2026-08-04 | `robots.txt` só é gerado quando `baseURL === '/'` (crawler só lê na raiz do domínio) |
+| 2026-08-04 | Plataformas do hero viram texto na face mono — logo de marca em contorno de 1px não é legível a 24px, e "Web" não tem marca. As marcas cheias de App Store e Google Play ficam só na seção de download |
