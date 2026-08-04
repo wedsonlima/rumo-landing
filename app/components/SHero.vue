@@ -35,7 +35,7 @@
           <span class="s-hero__platforms-label">Plataformas disponíveis:</span>
           <div class="s-hero__platforms-icons">
             <IconApple class="s-hero__platform-icon" aria-label="iOS" />
-            <IconWeb class="s-hero__platform-icon" aria-label="Web" />
+            <IconWeb class="s-hero__platform-icon s-hero__platform-icon--square" aria-label="Web" />
             <IconAndroid class="s-hero__platform-icon" aria-label="Android" />
           </div>
         </div>
@@ -61,6 +61,7 @@
             width="252"
             height="545"
             format="webp"
+            :modifiers="{ position: 'top' }"
             preload
             fetchpriority="high"
           />
@@ -156,6 +157,13 @@
 
 .s-hero__platform-icon {
   @apply size-6 text-text-muted;
+}
+
+/* Apple e Android têm viewBox 17×21, então desenham 19,4×24 dentro da caixa de
+   24px. O ícone Web é quadrado (20×20) e preencheria os 24px inteiros, ficando
+   opticamente maior que os vizinhos. Um passo menor iguala a massa visual. */
+.s-hero__platform-icon--square {
+  @apply size-5;
 }
 
 /* ── Phone mockup ───────────────────────────────────── */
