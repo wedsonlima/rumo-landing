@@ -45,7 +45,7 @@
       <div class="s-hero__phone">
         <NuxtImg
           class="s-hero__phone-body"
-          src="/images/hero-phone-body.png"
+          src="/images/hero-phone-body.svg"
           alt=""
           aria-hidden="true"
           width="280"

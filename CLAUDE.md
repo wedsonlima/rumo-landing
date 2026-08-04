@@ -75,8 +75,12 @@ rumo-landing/
 └── CLAUDE.md                      # Este arquivo
 ```
 
-> ⚠️ Vários arquivos em `public/images/` têm extensão `.png` mas **são SVG**
-> (`hero-phone-body.png`, `logo-rumo.png`). Não force formato raster neles.
+> ⚠️ **A extensão do arquivo precisa bater com o conteúdo.** `logo-rumo` e
+> `hero-phone-body` eram SVG com extensão `.png`; hospedagem estática define o
+> `Content-Type` pela extensão, e o browser se recusa a renderizar SVG servido
+> como `image/png` — as duas imagens quebravam em produção. (WebP dentro de um
+> `.png` funciona porque o browser faz sniffing; SVG não.)
+>
 > WebP é aplicado por imagem (`format="webp"`), só onde medimos ganho — nas
 > ilustrações chapadas o PNG fica menor que o WebP.
 

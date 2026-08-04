@@ -11,7 +11,7 @@
       <div class="r-navbar__brand">
         <slot name="brand">
           <NuxtLink to="/" class="r-navbar__logo">
-            <NuxtImg src="/images/logo-rumo.png" alt="Rumo" width="140" height="37" />
+            <NuxtImg src="/images/logo-rumo.svg" alt="Rumo" width="140" height="37" />
           </NuxtLink>
         </slot>
       </div>
