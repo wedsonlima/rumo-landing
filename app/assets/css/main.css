@@ -208,4 +208,10 @@ html {
 
 body {
   padding-top: 88px; /* compensate fixed navbar height (~86px) */
+
+  /* Os dots decorativos de canto ficam em right/left: -3px para pousar sobre a
+     borda do container. No mobile o container encosta na viewport e eles
+     geravam 3px de rolagem horizontal. `clip` corta sem criar um contexto de
+     rolagem, então position: sticky continua funcionando. */
+  overflow-x: clip;
 }

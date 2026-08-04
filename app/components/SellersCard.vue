@@ -26,8 +26,11 @@ defineProps<{
   @apply flex flex-col bg-gray-3 border border-gray-6 rounded-[8px] overflow-hidden;
 }
 
+/* O card largo só existe dentro do grid do desktop. Sem o prefixo lg:, o
+   flex-row valia também no mobile e empurrava a ilustração para fora do card,
+   que a recortava — a imagem sumia da tela. */
 .sellers-card--wide {
-  @apply col-span-2 flex-row gap-8;
+  @apply lg:col-span-2 lg:flex-row lg:gap-8;
 }
 
 .sellers-card__text {
@@ -35,7 +38,7 @@ defineProps<{
 }
 
 .sellers-card--wide .sellers-card__text {
-  @apply w-96 self-stretch;
+  @apply lg:w-96 lg:self-stretch;
 }
 
 .sellers-card__accent {
@@ -50,8 +53,12 @@ defineProps<{
   @apply font-sans font-normal text-sm text-gray-11 leading-[1.4];
 }
 
+/* No mobile o card largo empilha e sua ilustração é a única em fluxo normal
+   (as demais são absolutas), então centralizá-la evita o vazio à direita.
+   Filhos absolutos ignoram o flex, então o desktop segue igual. */
 .sellers-card__image {
-  @apply relative overflow-hidden shrink-0 h-60 w-full;
+  @apply relative overflow-hidden shrink-0 h-60 w-full
+         max-lg:flex max-lg:items-center max-lg:justify-center;
 }
 
 .sellers-card__image::before {
