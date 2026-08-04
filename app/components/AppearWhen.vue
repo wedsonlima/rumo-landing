@@ -95,6 +95,11 @@ onMounted(async () => {
   const target = getTarget()
   if (!target) return
 
+  // Sem movimento: sair antes de qualquer coisa deixa o conteúdo no estado
+  // natural, já visível. Animar é opcional; esconder para depois revelar não é
+  // — se o reset rodasse aqui, o texto ficaria em opacity 0 para sempre.
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+
   const [gsapModule, splitModule] = await Promise.all([
     import('gsap'),
     import('gsap/SplitText'),

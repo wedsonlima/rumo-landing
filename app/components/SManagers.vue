@@ -50,7 +50,7 @@
           <div class="s-managers__panel-border">
             <NuxtImg
               :src="panelImage"
-              alt=""
+              :alt="panelAlt"
               width="608"
               height="524"
               format="webp"
@@ -80,6 +80,14 @@ const panelImage = computed(() =>
   activeItem.value === 'item-1'
     ? '/images/manager-campaing.png'
     : '/images/manager-dashboard.png'
+)
+
+// O painel troca junto com o acordeão, então a descrição precisa trocar
+// também — é conteúdo, não decoração.
+const panelAlt = computed(() =>
+  activeItem.value === 'item-1'
+    ? 'Painel do Rumo na criação de uma campanha: objetivo, período e orçamento'
+    : 'Painel do Rumo acompanhando metas, desempenho das equipes e consumo do orçamento'
 )
 
 const accordionItems = [

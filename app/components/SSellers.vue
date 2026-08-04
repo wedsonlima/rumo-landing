@@ -97,7 +97,7 @@
         <!-- CTA -->
         <div class="s-sellers__cta">
           <div class="s-sellers__cta-content">
-            <NuxtImg src="/images/sellers-card-cta-symbol.svg" alt="" width="38" height="40" loading="lazy"
+            <NuxtImg src="/images/sellers-card-cta-symbol.svg" alt="" aria-hidden="true" width="38" height="40" loading="lazy"
               class="s-sellers__cta-symbol" />
             <div class="s-sellers__cta-text">
               <h3 class="s-sellers__cta-title">Converse com um consultor</h3>
@@ -202,7 +202,7 @@
 }
 
 .s-sellers__cta-btn {
-  @apply flex items-center gap-2 font-mono font-normal text-xs text-primary-dark
+  @apply flex items-center gap-2 min-h-6 font-mono font-normal text-xs text-primary-dark
          uppercase tracking-[0.12px] leading-5 cursor-pointer bg-transparent border-none p-0;
 }
 

@@ -79,10 +79,10 @@
 
       <!-- Lettering decorativo "rumo" -->
       <div class="r-footer__deco" aria-hidden="true">
-        <NuxtImg src="/images/footer-deco-r.svg" alt="" width="191" height="270" loading="lazy" class="r-footer__deco-letter" />
-        <NuxtImg src="/images/footer-deco-u.svg" alt="" width="246" height="270" loading="lazy" class="r-footer__deco-letter" />
-        <NuxtImg src="/images/footer-deco-m.svg" alt="" width="410" height="270" loading="lazy" class="r-footer__deco-letter" />
-        <NuxtImg src="/images/footer-deco-o.svg" alt="" width="260" height="270" loading="lazy" class="r-footer__deco-letter" />
+        <NuxtImg src="/images/footer-deco-r.svg" alt="" aria-hidden="true" width="191" height="270" loading="lazy" class="r-footer__deco-letter" />
+        <NuxtImg src="/images/footer-deco-u.svg" alt="" aria-hidden="true" width="246" height="270" loading="lazy" class="r-footer__deco-letter" />
+        <NuxtImg src="/images/footer-deco-m.svg" alt="" aria-hidden="true" width="410" height="270" loading="lazy" class="r-footer__deco-letter" />
+        <NuxtImg src="/images/footer-deco-o.svg" alt="" aria-hidden="true" width="260" height="270" loading="lazy" class="r-footer__deco-letter" />
       </div>
 
     </div>
@@ -161,8 +161,10 @@ onMounted(() => {
   @apply flex flex-col gap-2 list-none m-0 p-0;
 }
 
+/* inline-block faz o link ocupar a própria linha (24px) em vez das métricas da
+   fonte (20px), que é o mínimo de alvo de toque da WCAG 2.2. */
 .r-footer__link {
-  @apply font-sans font-normal text-base text-text-body leading-6 no-underline whitespace-nowrap transition-colors hover:text-text-primary;
+  @apply inline-block font-sans font-normal text-base text-text-body leading-6 no-underline whitespace-nowrap transition-colors hover:text-text-primary;
 }
 
 /* Links sociais */

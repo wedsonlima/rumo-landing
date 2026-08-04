@@ -30,7 +30,11 @@ export default defineNuxtConfig({
     baseURL,
     head: {
       htmlAttrs: { lang: 'pt-BR', class: 'dark' },
-      link: [{ rel: 'icon', type: 'image/x-icon', href: `${baseURL}favicon.ico` }],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: `${baseURL}favicon.ico` },
+        // Sem isto o iOS usa um screenshot da página como ícone na tela inicial.
+        { rel: 'apple-touch-icon', sizes: '180x180', href: `${baseURL}apple-touch-icon.png` },
+      ],
       meta: [
         { name: 'theme-color', content: '#111111' },
         { name: 'format-detection', content: 'telephone=no' },
