@@ -29,7 +29,8 @@
           <p class="r-footer__col-label">SOCIAL</p>
           <ul class="r-footer__col-links">
             <li>
-              <a href="https://instagram.com" target="_blank" rel="noopener" class="r-footer__social-link">
+              <a href="https://instagram.com/userumo.oficial" target="_blank" rel="noopener"
+                class="r-footer__social-link">
                 <IconInstagram class="r-footer__social-icon" />
                 <span>Instagram</span>
               </a>
@@ -41,7 +42,7 @@
               </a>
             </li>
             <li>
-              <a href="mailto:contato@rumo.com.br" class="r-footer__social-link">
+              <a href="mailto:admin@userumo.com.br" class="r-footer__social-link">
                 <IconMail class="r-footer__social-icon" />
                 <span>E-mail</span>
               </a>
