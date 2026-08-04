@@ -36,13 +36,13 @@
               </a>
             </li>
             <li>
-              <a href="https://linkedin.com" target="_blank" rel="noopener" class="r-footer__social-link">
-                <IconLinkedin class="r-footer__social-icon" />
-                <span>LinkedIn</span>
+              <a :href="whatsappUrl" target="_blank" rel="noopener noreferrer" class="r-footer__social-link">
+                <IconWhatsapp class="r-footer__social-icon" />
+                <span>WhatsApp</span>
               </a>
             </li>
             <li>
-              <a href="mailto:admin@userumo.com.br" class="r-footer__social-link">
+              <a :href="`mailto:${email}`" class="r-footer__social-link">
                 <IconMail class="r-footer__social-icon" />
                 <span>E-mail</span>
               </a>
@@ -54,11 +54,12 @@
         <div class="r-footer__col">
           <div class="r-footer__meta-group">
             <p class="r-footer__col-label">CONTATO</p>
-            <p class="r-footer__meta-value">admin@userumo.com.br</p>
+            <a :href="`mailto:${email}`" class="r-footer__meta-value r-footer__meta-link">{{ email }}</a>
           </div>
           <div class="r-footer__meta-group">
             <p class="r-footer__col-label">TELEFONE</p>
-            <p class="r-footer__meta-value">+55 85 98178-4072</p>
+            <a :href="whatsappUrl" target="_blank" rel="noopener noreferrer"
+              class="r-footer__meta-value r-footer__meta-link">{{ phoneDisplay }}</a>
           </div>
           <div class="r-footer__meta-group">
             <p class="r-footer__col-label">CNPJ</p>
@@ -89,6 +90,10 @@
 </template>
 
 <script setup lang="ts">
+const email = 'admin@userumo.com.br'
+const phoneDisplay = '+55 85 98178-4072'
+const whatsappUrl = 'https://wa.me/5585981784072'
+
 const year = new Date().getFullYear()
 const time = ref('')
 
@@ -176,6 +181,10 @@ onMounted(() => {
 
 .r-footer__meta-value {
   @apply font-sans font-normal text-base text-text-body leading-6 whitespace-nowrap;
+}
+
+.r-footer__meta-link {
+  @apply block no-underline transition-colors hover:text-text-primary;
 }
 
 /* ── Barra inferior ──────────────────────────────────────── */
