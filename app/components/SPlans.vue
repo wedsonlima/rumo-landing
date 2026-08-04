@@ -51,7 +51,7 @@
         <!-- Premium Plan -->
         <div class="s-plans__card s-plans__card--premium">
           <div class="s-plans__card-glow" aria-hidden="true">
-            <NuxtImg src="/images/plans-glow-ellipse.svg" alt="" width="400" height="400" loading="lazy" />
+            <NuxtImg src="/images/plans-glow-ellipse.svg" alt="" aria-hidden="true" width="400" height="400" loading="lazy" />
           </div>
           <div class="s-plans__card-content">
             <div class="s-plans__card-top">

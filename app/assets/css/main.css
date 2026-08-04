@@ -206,6 +206,24 @@ html {
   scroll-padding-top: 96px; /* navbar ~86px + breathing room */
 }
 
+/* Quem pede menos movimento no sistema recebe o site sem movimento: sem rolagem
+   suave, sem transições e sem as animações de entrada (o JS também consulta
+   esta media query antes de animar). */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 body {
   padding-top: 88px; /* compensate fixed navbar height (~86px) */
 

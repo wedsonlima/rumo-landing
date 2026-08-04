@@ -1,0 +1,57 @@
+name: CI
+
+# The deploy workflow only runs on pushes to main, so without this a pull
+# request would arrive with no checks at all — nothing proving it even builds.
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build static site
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Build static site
+        run: bun run generate
+
+      - name: Check the pages actually rendered
+        run: |
+          set -euo pipefail
+          for page in index.html contato/index.html politica-de-privacidade/index.html; do
+            test -s ".output/public/$page" || { echo "missing or empty: $page"; exit 1; }
+          done
+          test -s .output/public/sitemap.xml || { echo "missing sitemap.xml"; exit 1; }
+          echo "All pages and the sitemap were generated."
+
+      - name: Check every image is labelled or explicitly decorative
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import re, pathlib, sys
+          bad = []
+          for f in pathlib.Path('.output/public').rglob('*.html'):
+              for img in re.findall(r'<img[^>]*>', f.read_text()):
+                  if 'alt=' not in img and 'aria-hidden="true"' not in img:
+                      bad.append(f"{f}: {img[:90]}")
+          if bad:
+              print("Images with neither alt nor aria-hidden:")
+              print("\n".join(bad))
+              sys.exit(1)
+          print("Every image carries alt text or is marked decorative.")
+          PY

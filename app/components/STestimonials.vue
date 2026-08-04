@@ -48,7 +48,7 @@
 
       <!-- Decorative quote mark -->
       <div class="s-testimonials__deco" aria-hidden="true">
-        <NuxtImg src="/images/testimonials-quote-deco.svg" alt="" width="108" height="87" loading="lazy" />
+        <NuxtImg src="/images/testimonials-quote-deco.svg" alt="" aria-hidden="true" width="108" height="87" loading="lazy" />
       </div>
 
     </div>

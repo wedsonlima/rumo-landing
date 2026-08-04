@@ -38,11 +38,13 @@ export function useSeoPage(options: SeoPageOptions) {
     ogImageWidth: 1200,
     ogImageHeight: 630,
     ogImageAlt: options.title,
+    ogImageType: 'image/jpeg',
     ogSiteName: 'Rumo',
     ogLocale: 'pt_BR',
     twitterCard: 'summary_large_image',
     twitterTitle: options.title,
     twitterDescription: options.description,
     twitterImage: image,
+    twitterImageAlt: options.title,
   })
 }

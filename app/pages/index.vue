@@ -39,12 +39,17 @@ useHead({
       operatingSystem: 'Android, iOS, Web',
       url: siteUrl,
       description,
-      offers: { '@type': 'Offer', priceCurrency: 'BRL' },
+      inLanguage: 'pt-BR',
+      // Sem bloco `offers`: os planos são "sob consulta", e um Offer com
+      // priceCurrency mas sem price é dado estruturado incompleto — o Google
+      // sinaliza como erro em vez de ignorar.
       publisher: {
         '@type': 'Organization',
         name: 'Rumo',
+        url: siteUrl,
         email: 'admin@userumo.com.br',
         telephone: '+55 85 98178-4072',
+        sameAs: ['https://instagram.com/userumo.oficial'],
       },
     }),
   }],
