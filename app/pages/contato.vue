@@ -53,9 +53,7 @@
 
             <p class="p-contato__terms">
               Ao entrar em contato você concorda com os
-              <NuxtLink to="/politica-de-privacidade" class="p-contato__terms-link">
-                Termos e Políticas
-              </NuxtLink>.
+              <NuxtLink to="/politica-de-privacidade" class="p-contato__terms-link">Termos e Políticas</NuxtLink>.
             </p>
           </div>
         </div>
