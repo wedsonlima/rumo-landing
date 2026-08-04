@@ -75,7 +75,7 @@ const mailUrl = `mailto:${email}?subject=${encodeURIComponent('Solicitação de 
 
 useSeoPage({
   title: 'Solicite uma Demonstração — Rumo',
-  description: 'Veja como o Rumo transforma a gestão comercial da sua empresa em menos de 48h. Fale com nossa equipe pelo WhatsApp ou por e-mail.',
+  description: 'Veja como o Rumo transforma a gestão comercial da sua empresa em menos de 48h. Fale com a gente no WhatsApp ou por e-mail.',
   path: '/contato',
 })
 </script>

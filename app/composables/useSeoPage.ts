@@ -21,7 +21,7 @@ export function useSeoPage(options: SeoPageOptions) {
   const siteUrl = useRuntimeConfig().public.siteUrl as string
 
   const url = joinURL(siteUrl, options.path)
-  const image = joinURL(siteUrl, options.image ?? '/images/og-default.jpg')
+  const image = joinURL(siteUrl, options.image ?? '/images/og-cover.jpg')
 
   useHead({
     title: options.title,

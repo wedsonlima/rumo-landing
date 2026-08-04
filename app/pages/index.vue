@@ -19,8 +19,10 @@
 </template>
 
 <script setup lang="ts">
-const title = 'Rumo — Plataforma de Performance Comercial para Times de Vendas'
-const description = 'Rumo transforma o caos do time comercial em resultados previsíveis. Gestão de metas, gamificação, rankings em tempo real e pagamentos integrados para times de vendas.'
+// Kept under the limits social previews and Google truncate at:
+// title ≤ 60 characters, description ≤ 125.
+const title = 'Rumo — Plataforma de Performance para Times de Vendas'
+const description = 'Transforme o time comercial em resultado previsível: metas, gamificação, ranking em tempo real e premiação integrada.'
 
 useSeoPage({ title, description, path: '/' })
 

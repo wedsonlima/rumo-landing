@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useSeoPage({
   title: 'Política de Privacidade e Termos de Uso — Rumo',
-  description: 'Política de Privacidade e Termos de Uso da plataforma Rumo, em conformidade com a LGPD. Saiba como coletamos, usamos e protegemos seus dados pessoais.',
+  description: 'Política de Privacidade e Termos de Uso do Rumo: como coletamos, usamos e protegemos seus dados, conforme a LGPD.',
   path: '/politica-de-privacidade',
 })
 </script>
