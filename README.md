@@ -18,6 +18,7 @@ Nuxt 4 gerado como site 100% estático e publicado no GitHub Pages.
 | Fontes | `@nuxt/fonts` (self-hosted no build) |
 | Imagens | `@nuxt/image` com provider `ipxStatic` |
 | Animação | `gsap` + `SplitText` (carregado sob demanda) |
+| Analytics | GA4 via `gtag.js` (só no build de produção) |
 | Vídeo | `plyr` + Vimeo (carregado ao aproximar da viewport) |
 | SEO | `@nuxtjs/sitemap` + `@nuxtjs/robots` |
 | Package manager | **bun** |

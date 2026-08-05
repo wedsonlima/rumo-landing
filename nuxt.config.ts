@@ -14,6 +14,9 @@ const siteOrigin = process.env.NUXT_PUBLIC_SITE_ORIGIN || 'https://userumo.com.b
 // og:image are built from this.
 const siteUrl = (siteOrigin + baseURL).replace(/\/$/, '')
 
+// GA4 measurement ID. Public by design — it ships in the page source.
+const gaMeasurementId = 'G-TLPZGGMLK5'
+
 export default defineNuxtConfig({
   modules: ['@nuxt/fonts', '@nuxt/image', '@nuxtjs/sitemap', '@nuxtjs/robots', 'shadcn-nuxt'],
   components: [
@@ -75,7 +78,29 @@ export default defineNuxtConfig({
   },
   // ipxStatic emits every image at build time, so the deploy stays pure static
   // files. It also prefixes generated URLs with app.baseURL.
+  //
+  // GA4 lives here too, so `nuxt dev` never reports into the property.
+  //
+  // Only the initial page_view is sent, by gtag('config'). Client-side route
+  // changes are deliberately NOT tracked here: GA4 enhanced measurement already
+  // reports History API navigations, and sending our own on top double-counts
+  // every <NuxtLink> hop. If enhanced measurement is ever turned off in the data
+  // stream, the fix is to turn it back on, not to add a router hook.
   $production: {
+    app: {
+      head: {
+        script: [
+          { src: `https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`, async: true },
+          {
+            innerHTML:
+              'window.dataLayer=window.dataLayer||[];' +
+              'function gtag(){dataLayer.push(arguments);}' +
+              "gtag('js',new Date());" +
+              `gtag('config','${gaMeasurementId}');`,
+          },
+        ],
+      },
+    },
     image: {
       provider: 'ipxStatic',
     },
