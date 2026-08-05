@@ -1,18 +1,21 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import tailwindcss from '@tailwindcss/vite'
 
-// Base path of the deployment. GitHub Pages project sites are served from
-// /<repo>/, so every absolute asset URL needs this prefix.
-// Override with NUXT_APP_BASE_URL='/' when moving to a custom domain.
-const baseURL = process.env.NUXT_APP_BASE_URL || '/rumo-landing/'
+// Base path of the deployment. On the custom domain the site is served from the
+// root, so no prefix. Override with NUXT_APP_BASE_URL='/rumo-landing/' to build
+// for the github.io project-site URL, which serves from /<repo>/.
+const baseURL = process.env.NUXT_APP_BASE_URL || '/'
 
 // Scheme + host only. The sitemap module joins this with app.baseURL itself,
 // so passing it a URL that already contains the base path double-prefixes it.
-const siteOrigin = process.env.NUXT_PUBLIC_SITE_ORIGIN || 'https://wedsonlima.github.io'
+const siteOrigin = process.env.NUXT_PUBLIC_SITE_ORIGIN || 'https://userumo.com.br'
 
 // Full public address of the site, base path included. Canonical links and
 // og:image are built from this.
 const siteUrl = (siteOrigin + baseURL).replace(/\/$/, '')
+
+// GA4 measurement ID. Public by design — it ships in the page source.
+const gaMeasurementId = 'G-TLPZGGMLK5'
 
 export default defineNuxtConfig({
   modules: ['@nuxt/fonts', '@nuxt/image', '@nuxtjs/sitemap', '@nuxtjs/robots', 'shadcn-nuxt'],
@@ -75,7 +78,29 @@ export default defineNuxtConfig({
   },
   // ipxStatic emits every image at build time, so the deploy stays pure static
   // files. It also prefixes generated URLs with app.baseURL.
+  //
+  // GA4 lives here too, so `nuxt dev` never reports into the property.
+  //
+  // Only the initial page_view is sent, by gtag('config'). Client-side route
+  // changes are deliberately NOT tracked here: GA4 enhanced measurement already
+  // reports History API navigations, and sending our own on top double-counts
+  // every <NuxtLink> hop. If enhanced measurement is ever turned off in the data
+  // stream, the fix is to turn it back on, not to add a router hook.
   $production: {
+    app: {
+      head: {
+        script: [
+          { src: `https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`, async: true },
+          {
+            innerHTML:
+              'window.dataLayer=window.dataLayer||[];' +
+              'function gtag(){dataLayer.push(arguments);}' +
+              "gtag('js',new Date());" +
+              `gtag('config','${gaMeasurementId}');`,
+          },
+        ],
+      },
+    },
     image: {
       provider: 'ipxStatic',
     },
@@ -92,9 +117,9 @@ export default defineNuxtConfig({
     ],
   },
   // Crawlers only read robots.txt from the domain root, so it is meaningless
-  // while the site is served from /rumo-landing/. The module refuses to emit it
-  // under a base path; gating on baseURL turns it back on automatically once a
-  // custom domain is configured. The robots <meta> tag is emitted either way.
+  // under a base path — and the module refuses to emit it there. Gating on
+  // baseURL keeps a project-site build (NUXT_APP_BASE_URL=/rumo-landing/) from
+  // failing. The robots <meta> tag is emitted either way.
   robots: {
     allow: ['/'],
     robotsTxt: baseURL === '/',

@@ -8,7 +8,7 @@ Leia este arquivo inteiro antes de qualquer ação. Ele define o contexto do pro
 
 Site institucional/frontpage da **Rumo**, construído com Nuxt 4 e gerado como
 site **100% estático** (`nuxt generate`), publicado no GitHub Pages em
-`https://wedsonlima.github.io/rumo-landing/`.
+`https://userumo.com.br`.
 
 **Não existe servidor.** Nada de rotas em `server/`, `useRequestURL()` para
 montar URL absoluta (no prerender o host é o da máquina de build) ou qualquer
@@ -28,14 +28,16 @@ coisa que dependa de runtime. Conteúdo mora nos próprios componentes Vue.
 | Animação | `gsap` + `SplitText` (import dinâmico no `onMounted`) |
 | Vídeo | `plyr` + Vimeo (só inicializa perto da viewport) |
 | SEO | `@nuxtjs/sitemap` + `@nuxtjs/robots` |
+| Analytics | GA4 via `gtag.js` (só no build de produção) |
 | Hospedagem | GitHub Pages via `.github/workflows/deploy.yml` |
 | Package manager | **bun** (sempre use bun, nunca npm ou yarn) |
 
 ### Regras que vêm do build estático
 
-- **Base path `/rumo-landing/`** — `baseURL` e `siteOrigin` ficam no topo do
-  `nuxt.config.ts` e são a única fonte de verdade. Nunca escreva caminho
-  absoluto na mão: use `<NuxtLink>`, `<NuxtImg>` ou `useSeoPage()`.
+- **Base path `/`** — `baseURL` e `siteOrigin` ficam no topo do `nuxt.config.ts`
+  e são a única fonte de verdade. Nunca escreva caminho absoluto na mão: use
+  `<NuxtLink>`, `<NuxtImg>` ou `useSeoPage()`. O build para a URL do github.io
+  ainda funciona via `NUXT_APP_BASE_URL=/rumo-landing/`.
 - **SEO por página** — sempre `useSeoPage({ title, description, path })`.
   Ele monta canonical e `og:image` absolutos a partir do `siteUrl`.
 - **`typescript` é dependência direta** — o compilador de SFC do Vue precisa
@@ -249,3 +251,5 @@ Uso:
 | 2026-08-04 | `gsap`, `plyr` e o iframe do Vimeo saem do bundle inicial via `import()` dinâmico |
 | 2026-08-04 | `robots.txt` só é gerado quando `baseURL === '/'` (crawler só lê na raiz do domínio) |
 | 2026-08-04 | Plataformas do hero viram texto na face mono — logo de marca em contorno de 1px não é legível a 24px, e "Web" não tem marca. As marcas cheias de App Store e Google Play ficam só na seção de download |
+| 2026-08-05 | Domínio próprio `userumo.com.br` — `baseURL` volta a ser `/` e o `robots.txt` passa a ser gerado. Build para a URL do github.io continua possível via `NUXT_APP_BASE_URL` |
+| 2026-08-05 | GA4 (`G-TLPZGGMLK5`) direto em `app.head.script` dentro de `$production` — fica fora do `nuxt dev`. Nada de hook de rota: o enhanced measurement do GA4 já conta navegação via History API, e mandar `page_view` na mão em cima disso conta cada `<NuxtLink>` duas vezes. A linha de 2026-03-07 sobre `@nuxt/scripts` está obsoleta — o módulo saiu na migração para estático |
