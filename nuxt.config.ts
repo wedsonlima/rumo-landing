@@ -1,14 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import tailwindcss from '@tailwindcss/vite'
 
-// Base path of the deployment. GitHub Pages project sites are served from
-// /<repo>/, so every absolute asset URL needs this prefix.
-// Override with NUXT_APP_BASE_URL='/' when moving to a custom domain.
-const baseURL = process.env.NUXT_APP_BASE_URL || '/rumo-landing/'
+// Base path of the deployment. On the custom domain the site is served from the
+// root, so no prefix. Override with NUXT_APP_BASE_URL='/rumo-landing/' to build
+// for the github.io project-site URL, which serves from /<repo>/.
+const baseURL = process.env.NUXT_APP_BASE_URL || '/'
 
 // Scheme + host only. The sitemap module joins this with app.baseURL itself,
 // so passing it a URL that already contains the base path double-prefixes it.
-const siteOrigin = process.env.NUXT_PUBLIC_SITE_ORIGIN || 'https://wedsonlima.github.io'
+const siteOrigin = process.env.NUXT_PUBLIC_SITE_ORIGIN || 'https://userumo.com.br'
 
 // Full public address of the site, base path included. Canonical links and
 // og:image are built from this.
@@ -92,9 +92,9 @@ export default defineNuxtConfig({
     ],
   },
   // Crawlers only read robots.txt from the domain root, so it is meaningless
-  // while the site is served from /rumo-landing/. The module refuses to emit it
-  // under a base path; gating on baseURL turns it back on automatically once a
-  // custom domain is configured. The robots <meta> tag is emitted either way.
+  // under a base path — and the module refuses to emit it there. Gating on
+  // baseURL keeps a project-site build (NUXT_APP_BASE_URL=/rumo-landing/) from
+  // failing. The robots <meta> tag is emitted either way.
   robots: {
     allow: ['/'],
     robotsTxt: baseURL === '/',

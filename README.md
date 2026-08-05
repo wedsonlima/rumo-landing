@@ -4,7 +4,7 @@ Site institucional da **Rumo**, plataforma de performance comercial para times d
 
 Nuxt 4 gerado como site 100% estático e publicado no GitHub Pages.
 
-**No ar:** https://wedsonlima.github.io/rumo-landing/
+**No ar:** https://userumo.com.br
 
 ---
 
@@ -46,31 +46,34 @@ O deploy é automático: todo push na `main` dispara
 
 ## Base path e domínio
 
-O site é servido em `/rumo-landing/` (GitHub Pages project site), então **todo
-caminho absoluto precisa desse prefixo**. Isso é controlado por dois valores no
-topo do [`nuxt.config.ts`](nuxt.config.ts):
+O site é servido na raiz de `userumo.com.br`. Isso é controlado por dois valores
+no topo do [`nuxt.config.ts`](nuxt.config.ts):
 
 ```ts
-const baseURL    = process.env.NUXT_APP_BASE_URL       || '/rumo-landing/'
-const siteOrigin = process.env.NUXT_PUBLIC_SITE_ORIGIN || 'https://wedsonlima.github.io'
+const baseURL    = process.env.NUXT_APP_BASE_URL       || '/'
+const siteOrigin = process.env.NUXT_PUBLIC_SITE_ORIGIN || 'https://userumo.com.br'
 ```
 
 `siteUrl` (usado em canonical, `og:image` e sitemap) é derivado dos dois.
 
-### Migrando para domínio próprio
+O domínio em si mora em dois lugares: [`public/CNAME`](public/CNAME) e a
+configuração de Pages do repositório (Settings → Pages → Custom domain). O
+deploy é feito por workflow, então quem manda de fato é a configuração do
+repositório — o `CNAME` fica versionado para o domínio ser rastreável no código.
 
-1. Crie `public/CNAME` com o domínio (ex.: `userumo.com.br`)
-2. Aponte o DNS para o GitHub Pages
-3. Defina no workflow:
-   ```yaml
-   env:
-     NUXT_APP_BASE_URL: /
-     NUXT_PUBLIC_SITE_ORIGIN: https://userumo.com.br
-   ```
+### Buildando para a URL do github.io
 
-Com `NUXT_APP_BASE_URL=/`, o `robots.txt` passa a ser gerado automaticamente —
-ele é omitido no subcaminho porque crawlers só leem `robots.txt` na raiz do
-domínio.
+O project site (`https://wedsonlima.github.io/rumo-landing/`) serve a partir de
+`/<repo>/`, então **todo caminho absoluto precisa desse prefixo**:
+
+```sh
+NUXT_APP_BASE_URL=/rumo-landing/ \
+NUXT_PUBLIC_SITE_ORIGIN=https://wedsonlima.github.io \
+bun run generate
+```
+
+Nesse modo o `robots.txt` deixa de ser gerado — crawlers só leem `robots.txt` na
+raiz do domínio, e o módulo se recusa a emiti-lo sob um base path.
 
 ---
 
