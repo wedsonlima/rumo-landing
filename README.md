@@ -85,17 +85,31 @@ app/
 ├── app.vue                       # shell (NuxtPage)
 ├── assets/css/main.css           # design tokens + tipografia base
 ├── composables/useSeoPage.ts     # canonical + OG/Twitter de cada página
+├── data/articles.ts              # registro dos artigos do blog
 ├── components/
 │   ├── ui/                       # shadcn (accordion, button)
 │   ├── icons/                    # ícones como SFC, sempre currentColor
-│   ├── R*.vue                    # navbar, footer, separator
+│   ├── R*.vue                    # navbar, footer, separator, artigo
 │   └── S*.vue                    # seções da home
 └── pages/
     ├── index.vue                 # home (compõe as seções)
     ├── contato.vue               # WhatsApp + e-mail
-    └── politica-de-privacidade.vue
+    ├── politica-de-privacidade.vue
+    └── blog/                     # listagem + um arquivo por artigo
 public/images/                    # assets estáticos
+public/downloads/                 # planilha do blog
+docs/marketing/icps.md            # perfis de cliente ideal
 ```
+
+## Blog
+
+Os artigos vivem em `app/pages/blog/<slug>.vue`, dentro de `<RArticle>`. O
+registro `app/data/articles.ts` lista título, descrição, datas e relacionados,
+e alimenta a listagem, o sitemap e o prerender. Para publicar um artigo:
+
+1. Adicione a entrada no registro.
+2. Crie a página com o mesmo slug.
+3. Rode `bun run generate`. Um slug sem página falha o build.
 
 ## Contato
 
