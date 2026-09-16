@@ -47,7 +47,7 @@
 
         <section id="como-o-rumo-faz" class="r-article__rumo" aria-labelledby="rumo-title">
           <div class="r-article__rumo-glow" aria-hidden="true">
-            <NuxtImg src="/images/plans-glow-ellipse.svg" alt="" width="400" height="400" loading="lazy" />
+            <NuxtImg src="/images/plans-glow-ellipse.svg" alt="" aria-hidden="true" width="400" height="400" loading="lazy" />
           </div>
           <div class="r-article__rumo-content">
             <p class="r-article__rumo-label">// COMO O RUMO FAZ</p>
