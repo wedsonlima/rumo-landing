@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import tailwindcss from '@tailwindcss/vite'
+import { articles, articlePath } from './app/data/articles'
 
 // Base path of the deployment. On the custom domain the site is served from the
 // root, so no prefix. Override with NUXT_APP_BASE_URL='/rumo-landing/' to build
@@ -16,6 +17,9 @@ const siteUrl = (siteOrigin + baseURL).replace(/\/$/, '')
 
 // GA4 measurement ID. Public by design — it ships in the page source.
 const gaMeasurementId = 'G-TLPZGGMLK5'
+
+// The blog index changes whenever any article does.
+const latestArticleUpdate = articles.map((a) => a.updatedAt).sort().at(-1)
 
 export default defineNuxtConfig({
   modules: ['@nuxt/fonts', '@nuxt/image', '@nuxtjs/sitemap', '@nuxtjs/robots', 'shadcn-nuxt'],
@@ -105,8 +109,9 @@ export default defineNuxtConfig({
       provider: 'ipxStatic',
     },
   },
-  // The site has three fixed routes. Declaring them beats route auto-discovery,
-  // which picked up the base path as a route and emitted duplicate entries.
+  // Routes are declared by hand instead of auto-discovered: discovery picked up
+  // the base path as a route and emitted duplicate entries. The blog entries
+  // come from the article registry, which is the single source for them.
   sitemap: {
     xsl: false,
     excludeAppSources: true,
@@ -114,6 +119,13 @@ export default defineNuxtConfig({
       { loc: '/', changefreq: 'weekly', priority: 1.0 },
       { loc: '/contato', changefreq: 'monthly', priority: 0.8 },
       { loc: '/politica-de-privacidade', changefreq: 'yearly', priority: 0.3 },
+      { loc: '/blog', changefreq: 'weekly', priority: 0.8, lastmod: latestArticleUpdate },
+      ...articles.map((a) => ({
+        loc: articlePath(a.slug),
+        changefreq: 'monthly' as const,
+        priority: 0.7,
+        lastmod: a.updatedAt,
+      })),
     ],
   },
   // Crawlers only read robots.txt from the domain root, so it is meaningless
@@ -128,7 +140,17 @@ export default defineNuxtConfig({
     preset: 'github_pages',
     prerender: {
       crawlLinks: true,
-      routes: ['/', '/contato', '/politica-de-privacidade', '/sitemap.xml'],
+      // failOnError turns a registry slug without a page into a build failure
+      // instead of a silently missing article.
+      failOnError: true,
+      routes: [
+        '/',
+        '/contato',
+        '/politica-de-privacidade',
+        '/blog',
+        ...articles.map((a) => articlePath(a.slug)),
+        '/sitemap.xml',
+      ],
     },
   },
 })

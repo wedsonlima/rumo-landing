@@ -20,11 +20,9 @@
       <div v-if="!props.minimal" class="r-navbar__start">
         <slot name="start">
           <ul class="r-navbar__nav">
-            <li><a href="#o-rumo" class="r-navbar__link">O Rumo</a></li>
-            <li><a href="#funcionalidades" class="r-navbar__link">Funcionalidades</a></li>
-            <li><a href="#performance" class="r-navbar__link">Performance</a></li>
-            <li><a href="#depoimentos" class="r-navbar__link">Depoimentos</a></li>
-            <li><a href="#planos" class="r-navbar__link">Ver Planos</a></li>
+            <li v-for="item in navItems" :key="item.label">
+              <NuxtLink :to="item.to" class="r-navbar__link">{{ item.label }}</NuxtLink>
+            </li>
           </ul>
         </slot>
       </div>
@@ -52,14 +50,11 @@
     <Transition v-if="!props.minimal" name="mobile-slide">
       <div v-if="isMobileMenuOpen" class="r-navbar__mobile-menu">
         <ul class="r-navbar__mobile-nav">
-          <li><a href="#o-rumo" class="r-navbar__mobile-link" @click="isMobileMenuOpen = false">O Rumo</a></li>
-          <li><a href="#funcionalidades" class="r-navbar__mobile-link"
-              @click="isMobileMenuOpen = false">Funcionalidades</a></li>
-          <li><a href="#performance" class="r-navbar__mobile-link" @click="isMobileMenuOpen = false">Performance</a>
+          <li v-for="item in navItems" :key="item.label">
+            <NuxtLink :to="item.to" class="r-navbar__mobile-link" @click="isMobileMenuOpen = false">
+              {{ item.label }}
+            </NuxtLink>
           </li>
-          <li><a href="#depoimentos" class="r-navbar__mobile-link" @click="isMobileMenuOpen = false">Depoimentos</a>
-          </li>
-          <li><a href="#planos" class="r-navbar__mobile-link" @click="isMobileMenuOpen = false">Ver Planos</a></li>
         </ul>
         <div class="r-navbar__mobile-cta">
           <NuxtLink to="/contato" class="block" @click="isMobileMenuOpen = false">
@@ -75,6 +70,17 @@
 
 <script setup lang="ts">
 const props = defineProps<{ minimal?: boolean }>()
+
+// Âncoras como objeto de rota, e não como href "#secao": assim o link funciona
+// fora da home (/blog/...) e respeita app.baseURL no build para o github.io.
+const navItems = [
+  { label: 'O Rumo', to: { path: '/', hash: '#o-rumo' } },
+  { label: 'Funcionalidades', to: { path: '/', hash: '#funcionalidades' } },
+  { label: 'Performance', to: { path: '/', hash: '#performance' } },
+  { label: 'Depoimentos', to: { path: '/', hash: '#depoimentos' } },
+  { label: 'Ver Planos', to: { path: '/', hash: '#planos' } },
+  { label: 'Blog', to: { path: '/blog' } },
+]
 
 const isHidden = ref(false)
 const isScrolled = ref(false)

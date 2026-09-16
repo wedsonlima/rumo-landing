@@ -16,11 +16,9 @@
         <div class="r-footer__col">
           <p class="r-footer__col-label">NAVEGAR</p>
           <ul class="r-footer__col-links">
-            <li><a href="#o-rumo" class="r-footer__link">O Rumo</a></li>
-            <li><a href="#funcionalidades" class="r-footer__link">Funcionalidades</a></li>
-            <li><a href="#performance" class="r-footer__link">Performance</a></li>
-            <li><a href="#depoimentos" class="r-footer__link">Depoimentos</a></li>
-            <li><a href="#planos" class="r-footer__link">Ver Planos</a></li>
+            <li v-for="item in navItems" :key="item.label">
+              <NuxtLink :to="item.to" class="r-footer__link">{{ item.label }}</NuxtLink>
+            </li>
           </ul>
         </div>
 
@@ -93,6 +91,15 @@
 const email = 'admin@userumo.com.br'
 const phoneDisplay = '+55 85 98178-4072'
 const whatsappUrl = 'https://wa.me/5585981784072'
+
+const navItems = [
+  { label: 'O Rumo', to: { path: '/', hash: '#o-rumo' } },
+  { label: 'Funcionalidades', to: { path: '/', hash: '#funcionalidades' } },
+  { label: 'Performance', to: { path: '/', hash: '#performance' } },
+  { label: 'Depoimentos', to: { path: '/', hash: '#depoimentos' } },
+  { label: 'Ver Planos', to: { path: '/', hash: '#planos' } },
+  { label: 'Blog', to: { path: '/blog' } },
+]
 
 const year = new Date().getFullYear()
 const time = ref('')

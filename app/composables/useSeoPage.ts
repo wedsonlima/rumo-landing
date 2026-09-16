@@ -7,6 +7,12 @@ interface SeoPageOptions {
   path: string
   /** Public path of the social card image. */
   image?: string
+  /** Defaults to 'website'. Articles pass 'article' plus the dates below. */
+  type?: 'website' | 'article'
+  /** ISO 8601 date. Only meaningful with type 'article'. */
+  publishedTime?: string
+  /** ISO 8601 date. Only meaningful with type 'article'. */
+  modifiedTime?: string
 }
 
 /**
@@ -22,6 +28,7 @@ export function useSeoPage(options: SeoPageOptions) {
 
   const url = joinURL(siteUrl, options.path)
   const image = joinURL(siteUrl, options.image ?? '/images/og-cover.jpg')
+  const type = options.type ?? 'website'
 
   useHead({
     title: options.title,
@@ -32,7 +39,7 @@ export function useSeoPage(options: SeoPageOptions) {
     description: options.description,
     ogTitle: options.title,
     ogDescription: options.description,
-    ogType: 'website',
+    ogType: type,
     ogUrl: url,
     ogImage: image,
     ogImageWidth: 1200,
@@ -46,5 +53,11 @@ export function useSeoPage(options: SeoPageOptions) {
     twitterDescription: options.description,
     twitterImage: image,
     twitterImageAlt: options.title,
+    ...(type === 'article' && {
+      articlePublishedTime: options.publishedTime,
+      articleModifiedTime: options.modifiedTime ?? options.publishedTime,
+    }),
   })
+
+  return { url, image, siteUrl }
 }

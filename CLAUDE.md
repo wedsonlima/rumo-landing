@@ -57,19 +57,26 @@ rumo-landing/
 │   ├── assets/css/main.css        # Design tokens + tipografia base
 │   ├── lib/utils.ts               # cn() helper (shadcn)
 │   ├── composables/
-│   │   └── useSeoPage.ts          # canonical + OG/Twitter de cada página
+│   │   └── useSeoPage.ts          # canonical + OG/Twitter de cada página (website ou article)
+│   ├── data/
+│   │   └── articles.ts            # Registro dos artigos do blog — fonte única (listagem, sitemap, prerender)
 │   ├── pages/
 │   │   ├── index.vue              # Home — compõe as seções S*
 │   │   ├── contato.vue            # WhatsApp + e-mail (sem backend)
-│   │   └── politica-de-privacidade.vue
+│   │   ├── politica-de-privacidade.vue
+│   │   └── blog/
+│   │       ├── index.vue          # Listagem dos artigos
+│   │       └── <slug>.vue         # Um artigo por arquivo, dentro de <RArticle>
 │   └── components/
 │       ├── ui/                    # Componentes shadcn (não editar diretamente)
 │       │   ├── button/            # Button com variante "cta"
 │       │   └── accordion/
 │       ├── icons/                 # Ícones como SFC, sempre currentColor
-│       ├── R*.vue                 # RNavbar, RFooter, RSeparator
+│       ├── R*.vue                 # RNavbar, RFooter, RSeparator, RArticle, RArticleCard
 │       └── S*.vue                 # Seções da home (SHero, SPlans, …)
 ├── public/images/                 # Assets estáticos
+├── public/downloads/              # Arquivos para download (planilha do blog)
+├── docs/marketing/icps.md         # Perfis de cliente ideal — leia antes de escrever conteúdo
 ├── .github/workflows/deploy.yml   # Build + publish no GitHub Pages
 ├── nuxt.config.ts                 # baseURL, siteOrigin, módulos, imagens
 ├── components.json                # Configuração do shadcn-vue
@@ -87,6 +94,31 @@ rumo-landing/
 > ilustrações chapadas o PNG fica menor que o WebP.
 
 ---
+
+## Blog e conteúdo
+
+- **Leia `docs/marketing/icps.md` antes de escrever qualquer texto.** Cada
+  artigo mira um ICP e usa o vocabulário dele.
+- **Um artigo = uma entrada em `app/data/articles.ts` + um arquivo em
+  `app/pages/blog/<slug>.vue`.** O registro é a fonte única da listagem, do
+  sitemap, do prerender e dos artigos relacionados. Slug sem página derruba o
+  build (`nitro.prerender.failOnError`).
+- **A página do artigo só tem conteúdo.** Cabeçalho, sumário, bloco "Como o
+  Rumo faz", relacionados, `useSeoPage`, JSON-LD `BlogPosting` e
+  `BreadcrumbList` vêm de `RArticle`. O texto vai no slot padrão; a introdução
+  no slot `intro`; o resumo no slot `lead`. Os `<h2>` precisam de `id` que bata
+  com a prop `sections`.
+- **`updatedAt` só muda em revisão editorial real.** Ele vira `lastmod` no
+  sitemap e `dateModified` no JSON-LD.
+- **Título ≤ 60 caracteres, descrição ≤ 155.** Sem travessão no título.
+- **Mobile first e validado no celular.** Escreva o estilo base para 390px e
+  use `lg:` para o desktop. Antes de dar por pronto, abra a página em 390px
+  (`agent-browser set viewport 390 844`) e confira rolagem horizontal, tabelas
+  (`.r-table` rola por dentro) e CTA alcançável.
+- **Passe o `humanizer` em todo texto gerado.** Sem "não é X, é Y", sem fecho
+  de uma linha, sem negrito decorativo em lista.
+- **Âncoras da home fora da home:** `<NuxtLink :to="{ path: '/', hash: '#secao' }">`.
+  Um `href="/#secao"` sairia do base path no build para o github.io.
 
 ## Regras de Workflow
 
@@ -253,3 +285,6 @@ Uso:
 | 2026-08-04 | Plataformas do hero viram texto na face mono — logo de marca em contorno de 1px não é legível a 24px, e "Web" não tem marca. As marcas cheias de App Store e Google Play ficam só na seção de download |
 | 2026-08-05 | Domínio próprio `userumo.com.br` — `baseURL` volta a ser `/` e o `robots.txt` passa a ser gerado. Build para a URL do github.io continua possível via `NUXT_APP_BASE_URL` |
 | 2026-08-05 | GA4 (`G-TLPZGGMLK5`) direto em `app.head.script` dentro de `$production` — fica fora do `nuxt dev`. Nada de hook de rota: o enhanced measurement do GA4 já conta navegação via History API, e mandar `page_view` na mão em cima disso conta cada `<NuxtLink>` duas vezes. A linha de 2026-03-07 sobre `@nuxt/scripts` está obsoleta — o módulo saiu na migração para estático |
+| 2026-09-16 | Blog em `/blog` com seis artigos para SEO, ICPs em `docs/marketing/icps.md`, registro tipado em `app/data/articles.ts` que alimenta sitemap e prerender. Layout escolhido pelo Codex (gpt-6-astra) entre três direções: coluna única de 720px. `@nuxt/content` descartado de novo: consulta no browser via SQLite/WASM não compensa para meia dúzia de páginas |
+| 2026-09-16 | Âncoras da navbar e do footer viram `NuxtLink` com `{ path: '/', hash }` para funcionar fora da home e sob base path. Link "Blog" nos dois |
+| 2026-09-16 | Planilha de metas em `public/downloads/planilha-metas-de-vendas-rumo.xlsx`, gerada sem dependência (zip de XML) — o artigo de planilha entrega o arquivo em vez de só criticar planilhas |
