@@ -288,3 +288,5 @@ Uso:
 | 2026-09-16 | Blog em `/blog` com seis artigos para SEO, ICPs em `docs/marketing/icps.md`, registro tipado em `app/data/articles.ts` que alimenta sitemap e prerender. Layout escolhido pelo Codex (gpt-6-astra) entre três direções: coluna única de 720px. `@nuxt/content` descartado de novo: consulta no browser via SQLite/WASM não compensa para meia dúzia de páginas |
 | 2026-09-16 | Âncoras da navbar e do footer viram `NuxtLink` com `{ path: '/', hash }` para funcionar fora da home e sob base path. Link "Blog" nos dois |
 | 2026-09-16 | Planilha de metas em `public/downloads/planilha-metas-de-vendas-rumo.xlsx`, gerada sem dependência (zip de XML) — o artigo de planilha entrega o arquivo em vez de só criticar planilhas |
+
+| 2026-10-03 | Auditoria: canonical, og:url, sitemap e links públicos usam barra final para corresponder às URLs servidas pelo GitHub Pages. |

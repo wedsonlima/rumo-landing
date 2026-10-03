@@ -51,6 +51,7 @@ export default defineNuxtConfig({
   site: {
     url: siteOrigin,
     name: 'Rumo',
+    trailingSlash: true,
   },
   runtimeConfig: {
     public: { siteUrl },
@@ -117,9 +118,9 @@ export default defineNuxtConfig({
     excludeAppSources: true,
     urls: [
       { loc: '/', changefreq: 'weekly', priority: 1.0 },
-      { loc: '/contato', changefreq: 'monthly', priority: 0.8 },
-      { loc: '/politica-de-privacidade', changefreq: 'yearly', priority: 0.3 },
-      { loc: '/blog', changefreq: 'weekly', priority: 0.8, lastmod: latestArticleUpdate },
+      { loc: '/contato/', changefreq: 'monthly', priority: 0.8 },
+      { loc: '/politica-de-privacidade/', changefreq: 'yearly', priority: 0.3 },
+      { loc: '/blog/', changefreq: 'weekly', priority: 0.8, lastmod: latestArticleUpdate },
       ...articles.map((a) => ({
         loc: articlePath(a.slug),
         changefreq: 'monthly' as const,
@@ -145,9 +146,9 @@ export default defineNuxtConfig({
       failOnError: true,
       routes: [
         '/',
-        '/contato',
-        '/politica-de-privacidade',
-        '/blog',
+        '/contato/',
+        '/politica-de-privacidade/',
+        '/blog/',
         ...articles.map((a) => articlePath(a.slug)),
         '/sitemap.xml',
       ],

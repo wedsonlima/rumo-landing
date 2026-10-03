@@ -104,7 +104,7 @@
               <p class="s-sellers__cta-body">Entenda como podemos mudar o seu rumo.</p>
             </div>
           </div>
-          <NuxtLink to="/contato" class="s-sellers__cta-btn">
+          <NuxtLink to="/contato/" class="s-sellers__cta-btn">
             Solicitar demonstração
             <IconArrowRight class="s-sellers__cta-btn-icon" />
           </NuxtLink>

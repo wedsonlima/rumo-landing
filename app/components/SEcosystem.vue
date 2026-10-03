@@ -99,7 +99,7 @@
           <span class="s-ecosystem__cta-box-dot s-ecosystem__cta-box-dot--tr" />
           <span class="s-ecosystem__cta-box-dot s-ecosystem__cta-box-dot--bl" />
           <span class="s-ecosystem__cta-box-dot s-ecosystem__cta-box-dot--br" />
-          <NuxtLink to="/contato" class="s-ecosystem__cta-btn">Solicitar demonstração</NuxtLink>
+          <NuxtLink to="/contato/" class="s-ecosystem__cta-btn">Solicitar demonstração</NuxtLink>
         </div>
       </div>
     </div>

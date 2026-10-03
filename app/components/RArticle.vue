@@ -9,7 +9,7 @@
             <ol class="r-article__breadcrumb-list">
               <li><NuxtLink to="/" class="r-article__breadcrumb-link">Início</NuxtLink></li>
               <li aria-hidden="true" class="r-article__breadcrumb-sep">/</li>
-              <li><NuxtLink to="/blog" class="r-article__breadcrumb-link">Blog</NuxtLink></li>
+              <li><NuxtLink to="/blog/" class="r-article__breadcrumb-link">Blog</NuxtLink></li>
               <li aria-hidden="true" class="r-article__breadcrumb-sep">/</li>
               <li class="r-article__breadcrumb-current" aria-current="page">{{ article.category }}</li>
             </ol>
@@ -53,7 +53,7 @@
             <p class="r-article__rumo-label">// COMO O RUMO FAZ</p>
             <h2 id="rumo-title" class="r-article__rumo-title">{{ article.rumo.title }}</h2>
             <p class="r-article__rumo-body">{{ article.rumo.body }}</p>
-            <NuxtLink to="/contato" class="r-article__rumo-cta">
+            <NuxtLink to="/contato/" class="r-article__rumo-cta">
               <Button variant="cta" class="r-article__rumo-btn">Solicitar demonstração</Button>
             </NuxtLink>
           </div>
@@ -155,8 +155,8 @@ useHead({
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Início', item: siteUrl },
-          { '@type': 'ListItem', position: 2, name: 'Blog', item: `${siteUrl}/blog` },
+          { '@type': 'ListItem', position: 1, name: 'Início', item: `${siteUrl}/` },
+          { '@type': 'ListItem', position: 2, name: 'Blog', item: `${siteUrl}/blog/` },
           { '@type': 'ListItem', position: 3, name: article.title, item: url },
         ],
       }),

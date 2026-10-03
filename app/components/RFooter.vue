@@ -71,7 +71,7 @@
       <div class="r-footer__bottom">
         <p class="r-footer__bottom-text">Todos os direitos reservados</p>
         <p class="r-footer__bottom-text">{{ year }} // Rumo</p>
-        <NuxtLink to="/politica-de-privacidade" class="r-footer__bottom-text r-footer__bottom-link">Política de
+        <NuxtLink to="/politica-de-privacidade/" class="r-footer__bottom-text r-footer__bottom-link">Política de
           privacidade</NuxtLink>
       </div>
 
@@ -98,7 +98,7 @@ const navItems = [
   { label: 'Performance', to: { path: '/', hash: '#performance' } },
   { label: 'Depoimentos', to: { path: '/', hash: '#depoimentos' } },
   { label: 'Ver Planos', to: { path: '/', hash: '#planos' } },
-  { label: 'Blog', to: { path: '/blog' } },
+  { label: 'Blog', to: { path: '/blog/' } },
 ]
 
 const year = new Date().getFullYear()

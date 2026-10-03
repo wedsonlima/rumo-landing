@@ -53,7 +53,7 @@
 
             <p class="p-contato__terms">
               Ao entrar em contato você concorda com os
-              <NuxtLink to="/politica-de-privacidade" class="p-contato__terms-link">Termos e Políticas</NuxtLink>.
+              <NuxtLink to="/politica-de-privacidade/" class="p-contato__terms-link">Termos e Políticas</NuxtLink>.
             </p>
           </div>
         </div>
@@ -76,7 +76,7 @@ const mailUrl = `mailto:${email}?subject=${encodeURIComponent('Solicitação de 
 useSeoPage({
   title: 'Solicite uma Demonstração — Rumo',
   description: 'Veja como o Rumo transforma a gestão comercial da sua empresa em menos de 48h. Fale com a gente no WhatsApp ou por e-mail.',
-  path: '/contato',
+  path: '/contato/',
 })
 </script>
 
