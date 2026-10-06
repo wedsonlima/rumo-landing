@@ -139,9 +139,9 @@
       Depois da primeira campanha, o time sabe que a regra vale e que o prêmio chega. A partir daí, o
       gestor pode ampliar: mais métricas, ofensivas, missões por produto. Para montar a estrutura
       completa, veja
-      <NuxtLink to="/blog/campanha-de-incentivo-de-vendas">os 7 passos de uma campanha de incentivo</NuxtLink>.
+      <NuxtLink to="/blog/campanha-de-incentivo-de-vendas/">os 7 passos de uma campanha de incentivo</NuxtLink>.
       Para desenhar o ranking sem desmotivar quem está atrás, veja
-      <NuxtLink to="/blog/ranking-de-vendedores">os critérios de um ranking justo</NuxtLink>.
+      <NuxtLink to="/blog/ranking-de-vendedores/">os critérios de um ranking justo</NuxtLink>.
     </p>
     <p>
       Um caso real: a Braduca começou a usar o Rumo no meio de uma campanha ativa. Em poucos dias, o

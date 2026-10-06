@@ -26,7 +26,7 @@
             Somos a camada de inteligência que transforma o caos do time comercial
             em uma máquina de vendas previsível, engajada e de alta performance.
           </p>
-          <NuxtLink to="/contato">
+          <NuxtLink to="/contato/">
             <Button variant="cta" class="s-hero__cta">Solicitar demonstração</Button>
           </NuxtLink>
         </div>

@@ -30,7 +30,7 @@
       <!-- end: ação principal (desktop only) -->
       <div v-if="!props.minimal" class="r-navbar__end">
         <slot name="end">
-          <NuxtLink to="/contato">
+          <NuxtLink to="/contato/">
             <Button variant="cta">
               Solicitar demonstração
             </Button>
@@ -57,7 +57,7 @@
           </li>
         </ul>
         <div class="r-navbar__mobile-cta">
-          <NuxtLink to="/contato" class="block" @click="isMobileMenuOpen = false">
+          <NuxtLink to="/contato/" class="block" @click="isMobileMenuOpen = false">
             <Button variant="cta" class="w-full justify-center">
               Solicitar demonstração
             </Button>
@@ -79,7 +79,7 @@ const navItems = [
   { label: 'Performance', to: { path: '/', hash: '#performance' } },
   { label: 'Depoimentos', to: { path: '/', hash: '#depoimentos' } },
   { label: 'Ver Planos', to: { path: '/', hash: '#planos' } },
-  { label: 'Blog', to: { path: '/blog' } },
+  { label: 'Blog', to: { path: '/blog/' } },
 ]
 
 const isHidden = ref(false)

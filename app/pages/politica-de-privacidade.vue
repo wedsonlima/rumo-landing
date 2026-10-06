@@ -2,7 +2,7 @@
 useSeoPage({
   title: 'Política de Privacidade e Termos de Uso — Rumo',
   description: 'Política de Privacidade e Termos de Uso do Rumo: como coletamos, usamos e protegemos seus dados, conforme a LGPD.',
-  path: '/politica-de-privacidade',
+  path: '/politica-de-privacidade/',
 })
 </script>
 

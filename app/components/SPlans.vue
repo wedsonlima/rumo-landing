@@ -43,7 +43,7 @@
               </li>
             </ul>
           </div>
-          <NuxtLink to="/contato" class="s-plans__btn s-plans__btn--ghost">
+          <NuxtLink to="/contato/" class="s-plans__btn s-plans__btn--ghost">
             Solicitar demonstração
           </NuxtLink>
         </div>
@@ -70,7 +70,7 @@
               </li>
             </ul>
           </div>
-          <NuxtLink to="/contato" class="s-plans__btn s-plans__btn--cta">
+          <NuxtLink to="/contato/" class="s-plans__btn s-plans__btn--cta">
             Solicitar demonstração
           </NuxtLink>
         </div>

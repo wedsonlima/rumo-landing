@@ -33,7 +33,7 @@ const sorted = [...articles].sort((a, b) => b.publishedAt.localeCompare(a.publis
 const { siteUrl } = useSeoPage({
   title: 'Blog Rumo: metas, campanhas e premiação de vendedores',
   description: 'Guias práticos sobre metas de vendas, campanhas de incentivo, ranking, gamificação e premiação de vendedores para gestores comerciais.',
-  path: '/blog',
+  path: '/blog/',
 })
 
 useHead({

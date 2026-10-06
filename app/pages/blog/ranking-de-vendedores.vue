@@ -56,7 +56,7 @@
     <p>
       Para o ranking principal, use percentual da meta individual. Ele nivela vendedores de tamanhos
       diferentes. Como definir uma meta individual justa está em
-      <NuxtLink to="/blog/metas-de-vendas-por-vendedor">metas de vendas por vendedor: como definir e acompanhar</NuxtLink>.
+      <NuxtLink to="/blog/metas-de-vendas-por-vendedor/">metas de vendas por vendedor: como definir e acompanhar</NuxtLink>.
     </p>
 
     <h2 id="faixas">3. Faixas em vez de pódio</h2>
@@ -137,9 +137,9 @@
     <p>
       Esse modelo é a base de uma campanha gamificada. As outras mecânicas, como pontos por produto
       e missões curtas, estão em
-      <NuxtLink to="/blog/gamificacao-de-vendas">gamificação de vendas: exemplos para o varejo</NuxtLink>.
+      <NuxtLink to="/blog/gamificacao-de-vendas/">gamificação de vendas: exemplos para o varejo</NuxtLink>.
       Como calcular o valor das faixas sem estourar o orçamento está em
-      <NuxtLink to="/blog/premiacao-de-vendedores">premiação de vendedores: critérios e exemplos</NuxtLink>.
+      <NuxtLink to="/blog/premiacao-de-vendedores/">premiação de vendedores: critérios e exemplos</NuxtLink>.
     </p>
   </RArticle>
 </template>

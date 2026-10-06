@@ -74,7 +74,7 @@
       Se a campanha usa ranking, defina também o recorte. Ranking por loja ou por rede? Por
       vendedor ou por equipe? Um ranking único para lojas com fluxos muito diferentes desmotiva
       metade do time na segunda semana. Os critérios de um ranking justo estão em
-      <NuxtLink to="/blog/ranking-de-vendedores">ranking de vendedores: critérios para uma disputa justa</NuxtLink>.
+      <NuxtLink to="/blog/ranking-de-vendedores/">ranking de vendedores: critérios para uma disputa justa</NuxtLink>.
     </p>
 
     <h2 id="passo-4">4. Formalize em um regulamento de uma página</h2>
@@ -132,7 +132,7 @@
     <p>
       Prêmio de campanha e comissão são coisas diferentes na folha. A comissão integra o salário. O prêmio, no §4º do art. 457 da CLT, é a liberalidade paga por desempenho superior ao
       ordinariamente esperado, e não integra a remuneração. Como montar a premiação para que ela seja de fato um prêmio está em
-      <NuxtLink to="/blog/premiacao-de-vendedores">premiação de vendedores: critérios e exemplos</NuxtLink>.
+      <NuxtLink to="/blog/premiacao-de-vendedores/">premiação de vendedores: critérios e exemplos</NuxtLink>.
       Valide o enquadramento com a contabilidade ou com um advogado trabalhista antes da primeira
       campanha.
     </p>

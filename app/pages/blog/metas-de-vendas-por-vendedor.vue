@@ -134,9 +134,9 @@
       Uma planilha resolve a definição da meta. Ela resolve mal o acompanhamento diário, porque
       alguém precisa digitar as vendas todo dia e mandar o resultado para o time. O modelo de
       planilha e o ponto em que ela deixa de dar conta estão em
-      <NuxtLink to="/blog/planilha-de-metas-de-vendas">planilha de metas de vendas: modelo grátis por vendedor</NuxtLink>.
+      <NuxtLink to="/blog/planilha-de-metas-de-vendas/">planilha de metas de vendas: modelo grátis por vendedor</NuxtLink>.
       Para transformar a meta em uma disputa que motiva quem está atrás, veja
-      <NuxtLink to="/blog/ranking-de-vendedores">ranking de vendedores: critérios para uma disputa justa</NuxtLink>.
+      <NuxtLink to="/blog/ranking-de-vendedores/">ranking de vendedores: critérios para uma disputa justa</NuxtLink>.
     </p>
   </RArticle>
 </template>

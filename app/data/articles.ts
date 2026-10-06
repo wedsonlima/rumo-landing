@@ -129,6 +129,6 @@ export const articles: Article[] = [
   },
 ]
 
-export const articlePath = (slug: string) => `/blog/${slug}`
+export const articlePath = (slug: string) => `/blog/${slug}/`
 
 export const findArticle = (slug: string) => articles.find((a) => a.slug === slug)
