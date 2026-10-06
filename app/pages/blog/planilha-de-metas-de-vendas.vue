@@ -107,9 +107,9 @@
     <p>
       Antes de trocar a ferramenta, vale acertar o método. Como calcular a meta de cada vendedor
       está em
-      <NuxtLink to="/blog/metas-de-vendas-por-vendedor">metas de vendas por vendedor: como definir e acompanhar</NuxtLink>.
+      <NuxtLink to="/blog/metas-de-vendas-por-vendedor/">metas de vendas por vendedor: como definir e acompanhar</NuxtLink>.
       Como transformar o acompanhamento em uma disputa que o time gosta de olhar está em
-      <NuxtLink to="/blog/gamificacao-de-vendas">gamificação de vendas: exemplos para o varejo</NuxtLink>.
+      <NuxtLink to="/blog/gamificacao-de-vendas/">gamificação de vendas: exemplos para o varejo</NuxtLink>.
     </p>
   </RArticle>
 </template>

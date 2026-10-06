@@ -136,7 +136,7 @@
       Quem está em 95% no dia 20 ainda tem um alvo. Quem passou dos 105% continua vendendo até os
       125%. Só a maior faixa alcançada é paga.
       Como calcular a meta de cada um está em
-      <NuxtLink to="/blog/metas-de-vendas-por-vendedor">metas de vendas por vendedor: como definir e acompanhar</NuxtLink>.
+      <NuxtLink to="/blog/metas-de-vendas-por-vendedor/">metas de vendas por vendedor: como definir e acompanhar</NuxtLink>.
     </p>
 
     <h3>Modelo 2: pontos por produto com ofensiva</h3>
@@ -167,7 +167,7 @@
       Os três modelos usam a mesma estrutura: número, faixa, elegibilidade, data. Escolha um,
       escreva o regulamento em uma página e publique o placar todo dia. O passo a passo completo
       está em
-      <NuxtLink to="/blog/campanha-de-incentivo-de-vendas">campanha de incentivo de vendas: 7 passos para criar</NuxtLink>.
+      <NuxtLink to="/blog/campanha-de-incentivo-de-vendas/">campanha de incentivo de vendas: 7 passos para criar</NuxtLink>.
     </p>
   </RArticle>
 </template>
