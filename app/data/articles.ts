@@ -101,11 +101,11 @@ export const articles: Article[] = [
     slug: 'ranking-de-vendedores',
     title: 'Ranking de vendedores: critérios para uma disputa justa',
     description:
-      'Como montar um ranking de vendedores que motiva o time inteiro: critérios, faixas, ofensivas, frequência de atualização e os erros que desmotivam.',
+      'Veja um modelo de ranking de vendedores preenchido e compare faturamento com percentual da meta. Entenda os cuidados para uma disputa justa.',
     category: 'Ranking',
     publishedAt: '2026-09-16',
-    updatedAt: '2026-09-16',
-    readingMinutes: 5,
+    updatedAt: '2026-10-07',
+    readingMinutes: 6,
     related: ['gamificacao-de-vendas', 'premiacao-de-vendedores'],
     rumo: {
       title: 'Ranking em tempo real, no bolso do time',

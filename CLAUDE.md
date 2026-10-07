@@ -290,3 +290,5 @@ Uso:
 | 2026-09-16 | Planilha de metas em `public/downloads/planilha-metas-de-vendas-rumo.xlsx`, gerada sem dependência (zip de XML) — o artigo de planilha entrega o arquivo em vez de só criticar planilhas |
 
 | 2026-10-03 | Auditoria: canonical, og:url, sitemap e links públicos usam barra final para corresponder às URLs servidas pelo GitHub Pages. |
+
+| 2026-10-07 | Artigo de ranking inclui exemplo fictício preenchido, com metas/vendas/atingimento e ordens por faturamento e percentual. Revisão editorial atualiza somente sua updatedAt. |
