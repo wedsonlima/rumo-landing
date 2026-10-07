@@ -25,7 +25,7 @@
       recorte define quem compete com quem.
     </p>
     <ul>
-      <li><strong>Por loja.</strong> Todos têm o mesmo fluxo de clientes. É o recorte mais justo para varejo.</li>
+      <li><strong>Por loja.</strong> Facilita comparar a rotina, mas ainda exige atenção aos turnos, à carteira e à distribuição de atendimentos.</li>
       <li><strong>Por grupo de lojas.</strong> Lojas com fluxo parecido competem entre si. Serve para redes com formatos diferentes.</li>
       <li><strong>Por tempo de casa.</strong> Vendedores com menos de seis meses competem entre si. Protege quem está começando.</li>
       <li><strong>Por rede.</strong> Reconhece os melhores da empresa. Funciona como ranking secundário.</li>
@@ -47,15 +47,15 @@
         </thead>
         <tbody>
           <tr><td>Faturamento</td><td>Quem tem maior carteira ou melhor turno</td><td>Os mesmos três de sempre no topo</td></tr>
-          <tr><td>% da meta individual</td><td>Quem mais cresceu sobre a própria base</td><td>Vendedor novo pode liderar</td></tr>
+          <tr><td>% da meta individual</td><td>Quem atingiu a maior proporção da meta</td><td>Vendedor novo pode liderar</td></tr>
           <tr><td>Pontos de campanha</td><td>Quem executa o comportamento da campanha</td><td>Foco no produto ou na ação da vez</td></tr>
           <tr><td>Itens por venda</td><td>Quem oferece adicional</td><td>Ticket médio sobe</td></tr>
         </tbody>
       </table>
     </div>
     <p>
-      Para o ranking principal, use percentual da meta individual. Ele nivela vendedores de tamanhos
-      diferentes. Como definir uma meta individual justa está em
+      Para o ranking principal, considere o percentual da meta individual. Ele ajuda a comparar
+      metas de tamanhos diferentes quando elas refletem as oportunidades de cada vendedor. Como definir uma meta individual justa está em
       <NuxtLink to="/blog/metas-de-vendas-por-vendedor/">metas de vendas por vendedor: como definir e acompanhar</NuxtLink>.
     </p>
 
@@ -134,6 +134,42 @@
         <li><strong>Fechamento:</strong> dia 1 do mês seguinte, com prêmio pago até o dia 10.</li>
       </ul>
     </div>
+    <h3 id="exemplo-preenchido">Exemplo preenchido: faturamento ou percentual da meta?</h3>
+    <p>
+      Neste exemplo fictício, Ana, Bruno e Carla participam da mesma campanha mensal. As metas
+      individuais foram definidas antes do início, e a apuração usa as vendas faturadas no período.
+      O atingimento é calculado assim: vendas faturadas ÷ meta × 100.
+    </p>
+    <div class="r-table">
+      <table aria-label="Exemplo fictício de ranking com três vendedores">
+        <thead>
+          <tr><th scope="col">Vendedor</th><th scope="col">Meta</th><th scope="col">Vendas faturadas</th><th scope="col">Atingimento</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Ana</th><td>R$ 100.000</td><td>R$ 110.000</td><td>110%</td></tr>
+          <tr><th scope="row">Bruno</th><td>R$ 60.000</td><td>R$ 72.000</td><td>120%</td></tr>
+          <tr><th scope="row">Carla</th><td>R$ 40.000</td><td>R$ 52.000</td><td>130%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      Por faturamento, a ordem é Ana, Bruno e Carla. Por percentual da meta, a ordem é Carla,
+      Bruno e Ana: R$ 52.000 ÷ R$ 40.000 × 100 = 130%. No modelo acima, Carla e Bruno ficam na
+      faixa ouro; Ana fica na prata.
+    </p>
+    <p>
+      Escolha o critério antes de anunciar a campanha e mantenha-o até o fechamento. Se o objetivo
+      é reconhecer o maior volume faturado, use faturamento. Se é acompanhar o cumprimento das
+      metas individuais, use o percentual de atingimento. Defina também o período, quais vendas
+      contam e o critério de desempate.
+    </p>
+    <p>
+      O percentual só ajuda a comparar quando as metas são coerentes com as oportunidades.
+      Confira horas trabalhadas, fluxo por turno, carteira disponível e distribuição de clientes
+      antes de definir as metas. Se essas condições diferem muito, separe grupos comparáveis ou
+      ajuste as metas antes da campanha. Uma meta mais fácil pode colocar alguém no topo sem
+      significar um desempenho melhor.
+    </p>
     <p>
       Esse modelo é a base de uma campanha gamificada. As outras mecânicas, como pontos por produto
       e missões curtas, estão em
