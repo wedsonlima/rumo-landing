@@ -39,7 +39,7 @@
     <h2 id="passo-2">2. Defina o orçamento pelo pior caso</h2>
     <p>
       O orçamento de uma campanha é o valor que a empresa paga se todo mundo bater a faixa mais alta.
-      Esse é o teto. Calcule o teto antes de definir o valor do prêmio.
+      Esse é o teto, incluindo os bônus adicionais previstos no regulamento. Calcule o teto antes de definir o valor do prêmio.
     </p>
     <p>
       Há dois modelos de orçamento. O <strong>orçamento fixo</strong> define um valor total, por
@@ -51,8 +51,10 @@
     <div class="r-box">
       <p class="r-box__label">Exemplo de teto</p>
       <p>
-        Time de 20 vendedores. Faixa 1 paga R$ 150 e faixa 2 paga R$ 400. Teto da campanha: 20 × R$
-        400 = R$ 8.000. Se a margem extra que a campanha gera for menor do que isso, a regra precisa
+        Time de 20 vendedores. Faixa 1 paga R$ 150 e faixa 2 paga R$ 400. Só a maior faixa é paga.
+        Teto das faixas: 20 × R$ 400 = R$ 8.000. O top 3 da rede recebe R$ 600 adicionais por vendedor:
+        3 × R$ 600 = R$ 1.800. Teto da campanha: R$ 8.000 + R$ 1.800 = R$ 9.800.
+        Se a margem extra que a campanha gera for menor do que isso, a regra precisa
         mudar antes de começar.
       </p>
     </div>
@@ -92,6 +94,7 @@
         <li><strong>Pontuação.</strong> 10 pontos por unidade da linha X com nota emitida no período.</li>
         <li><strong>Referência.</strong> 200 pontos, a venda média da linha anterior no mesmo período. Prêmio só acima dela.</li>
         <li><strong>Premiação.</strong> A partir de 300 pontos: R$ 150. A partir de 500 pontos: R$ 400. Só a maior faixa é paga. Top 3 da rede, entre quem passou de 300 pontos: R$ 600 adicionais.</li>
+        <li><strong>Orçamento.</strong> Para o time de 20 vendedores, teto das faixas de R$ 8.000 mais R$ 1.800 do top 3: R$ 8.000 + R$ 1.800 = R$ 9.800.</li>
         <li><strong>Apuração.</strong> Relatório do sistema em 22 de outubro. Devoluções até 28 de outubro descontam pontos.</li>
         <li><strong>Pagamento.</strong> Até 10 de novembro, junto com o salário, discriminado como prêmio.</li>
         <li><strong>Dúvidas.</strong> Gerente comercial, por escrito, até 25 de outubro.</li>
