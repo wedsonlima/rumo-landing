@@ -59,7 +59,7 @@ export const articles: Article[] = [
       'Passo a passo para criar uma campanha de incentivo de vendas: objetivo, orçamento, regras, regulamento, divulgação, apuração e pagamento do prêmio.',
     category: 'Campanhas',
     publishedAt: '2026-09-16',
-    updatedAt: '2026-09-16',
+    updatedAt: '2026-10-14',
     readingMinutes: 6,
     related: ['premiacao-de-vendedores', 'metas-de-vendas-por-vendedor'],
     rumo: {

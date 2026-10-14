@@ -292,3 +292,4 @@ Uso:
 | 2026-10-03 | Auditoria: canonical, og:url, sitemap e links públicos usam barra final para corresponder às URLs servidas pelo GitHub Pages. |
 
 | 2026-10-07 | Artigo de ranking inclui exemplo fictício preenchido, com metas/vendas/atingimento e ordens por faturamento e percentual. Revisão editorial atualiza somente sua updatedAt. |
+| 2026-10-14 | Exemplo de orçamento da campanha inclui R$ 1.800 adicionais do top 3 no teto de R$ 9.800, também explicitado no regulamento. Revisão editorial atualiza somente sua updatedAt. |
