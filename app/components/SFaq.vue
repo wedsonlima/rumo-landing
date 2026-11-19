@@ -5,14 +5,14 @@ const faqs = [
     number: '01',
     question: 'Para quem é o Rumo?',
     answer:
-      'Para gestores e times comerciais que precisam de clareza total no funil de vendas. O Rumo foi criado para quem quer acompanhar metas, organizar oportunidades e melhorar a performance do time de vendas sem complicação.',
+      'Para gestores e times comerciais que querem acompanhar metas, rodar campanhas de incentivo e dar ao time visibilidade sobre ranking e desempenho.',
   },
   {
     id: 'item-2',
     number: '02',
     question: 'Quanto tempo leva para implementar?',
     answer:
-      'A implementação é rápida. A maioria dos times está operando em até 48 horas. Sem necessidade de integração complexa — basta criar a conta, configurar o funil e convidar o time.',
+      'O tempo depende da configuração da operação e das integrações necessárias. Para começar, configure as metas e campanhas e convide o time.',
   },
   {
     id: 'item-3',
@@ -24,9 +24,9 @@ const faqs = [
   {
     id: 'item-4',
     number: '04',
-    question: 'O time comercial precisa de treinamento para usar o app?',
+    question: 'O que o time comercial consegue acompanhar no app?',
     answer:
-      'Não. O Rumo foi pensado para ser intuitivo. A maioria dos vendedores começa a usar sem nenhum treinamento formal. O onboarding é guiado e o suporte está disponível para quem precisar.',
+      'O time pode consultar suas metas, acompanhar o progresso nas campanhas e ver sua posição no ranking.',
   },
   {
     id: 'item-5',
