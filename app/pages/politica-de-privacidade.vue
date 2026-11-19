@@ -47,7 +47,7 @@ useSeoPage({
             <h2 class="policy-section__title">1. Política de Privacidade</h2>
             <p class="policy-section__text">
               A <strong class="policy-section__strong">Rumo</strong> ("nós", "nosso" ou "Empresa") é responsável pela
-              plataforma de gestão de performance em vendas disponível no endereço <em>rumo.com.br</em> e nos
+              plataforma de gestão de performance em vendas disponível no endereço <em>userumo.com.br</em> e nos
               aplicativos móveis distribuídos pela Google Play Store e Apple App Store (coletivamente, "Plataforma" ou
               "App").
             </p>
@@ -338,7 +338,7 @@ useSeoPage({
               <p class="policy-contact__item"><span class="policy-contact__label">E-mail</span> <a
                   href="mailto:contato@braduca.com.br" class="policy-section__link">contato@braduca.com.br</a></p>
               <p class="policy-contact__item"><span class="policy-contact__label">Site</span> <a
-                  href="https://rumo.com.br" class="policy-section__link">rumo.com.br</a></p>
+                  href="https://userumo.com.br" class="policy-section__link">userumo.com.br</a></p>
               <p class="policy-contact__item"><span class="policy-contact__label">ANPD</span> <span
                   class="policy-contact__value">Autoridade Nacional de Proteção de Dados — <a
                     href="https://www.gov.br/anpd" class="policy-section__link" target="_blank"
